@@ -18,6 +18,6 @@ coalEmissions <- aggregate(coal$Emissions, list(coal$year), FUN = "sum")
 
 plot(coalEmissions, type = "l", xlab = "Year", 
      main = "Emissions from Coal Combustion Sources\n 1999 to 2008", 
-     ylab = expression("Total PM2.5 Emission"))
+     ylab = expression("PM2.5 Emission"))
 
 dev.off()
