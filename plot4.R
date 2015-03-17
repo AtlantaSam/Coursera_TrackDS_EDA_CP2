@@ -9,7 +9,6 @@ setwd("~/Documents/data/coursera/EDA_CP2")
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
-par("mar"=c(5.1, 4.5, 4.1, 2.1))
 png("/Users/samedgemon/GitHub/Coursera_EDA_CP/Coursera_TrackDS_EDA_CP2/plot4.png")
 coal <- grep("coal", SCC$Short.Name, ignore.case = T)
 coal <- SCC[coal, ]
