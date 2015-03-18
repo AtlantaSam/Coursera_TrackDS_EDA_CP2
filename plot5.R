@@ -12,7 +12,6 @@ SCC <- readRDS("Source_Classification_Code.rds")
 ## Get Baltimore
 baltimore <- subset (NEI, fips == "24510" | type == "ON-Road")
 
-#par("mar"=c(5.1, 4.5, 4.1, 2.1))
 png("/Users/samedgemon/GitHub/Coursera_EDA_CP/Coursera_TrackDS_EDA_CP2/plot5.png")
 vehicle <- grep("vehicle", SCC$Short.Name, ignore.case = T)
 vehicle <- SCC[vehicle, ]
