@@ -1,6 +1,6 @@
 ## plot5.R
 ## Question: How have emissions from motor vehicle sources changed 
-## from 1999–2008 in Baltimore City?
+##           from 1999–2008 in Baltimore City?
 
 ## Set working directory
 setwd("~/Documents/data/coursera/EDA_CP2")
