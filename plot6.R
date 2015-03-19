@@ -27,27 +27,16 @@ geoLocV <- geoLoc[geoLoc$SCC %in% vehicles$SCC,]
 geoSum <- ddply(geoLocV, c("year", "fips"), summarise, Emissions = sum(Emissions))
 geoLabel <- ifelse(geoSum$fips == "06037", "Los Angeles", "Baltimore")
 
-# Step 5: plotting to png
+# Plot to png
 png("/Users/samedgemon/GitHub/Coursera_EDA_CP/Coursera_TrackDS_EDA_CP2/plot6.png")
-qplot(main="Question 6\n 1998 to 2014",
-      sub="1998 to 2014",
+qplot(main="PM25 Emissions Comparison\n Baltimore and Los Angeles 1999 to 2008",
       data=geoSum,
       x=year, 
       xlab="Year",
       y=Emissions, 
-      ylab="Emissions",
+      ylab="Total PM25 Emissions",
       color=geoLabel,
       geom="line")
-dev.off()
-
-
-# Step 5: plotting to png
-png("plot6.png")
-qplot(year, Emissions, data=geoSum, 
-      geom="line", color=geoLabel) + 
-      ggtitle(expression("Motor Vehicle Emission Levels" ~ PM[2.5] ~ "  from 1999 to 2008 in Los Angeles County, CA and Baltimore, MD")) + 
-      xlab("Year") + 
-      ylab(expression("Levels of" ~ PM[2.5] ~ " Emissions"))
 dev.off()
 
 

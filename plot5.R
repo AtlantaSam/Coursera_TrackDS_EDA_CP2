@@ -10,7 +10,7 @@ NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
 ## Get Baltimore
-baltimore <- subset (NEI, fips == "24510" | type == "ON-Road")
+baltimore <- subset (NEI, fips == "24510")
 
 png("/Users/samedgemon/GitHub/Coursera_EDA_CP/Coursera_TrackDS_EDA_CP2/plot5.png")
 vehicle <- grep("vehicle", SCC$Short.Name, ignore.case = T)
@@ -21,5 +21,4 @@ VehicleEmissions <- aggregate(vehicle$Emissions, list(vehicle$year), FUN = "sum"
 plot(VehicleEmissions, type = "l", xlab = "Year", 
      main = "Emissions From Motor Vehicle Sources\n 1999 to 2008 in the City of Baltimore", 
      ylab = expression("Total PM2.5 Emission"))
-
 dev.off()
